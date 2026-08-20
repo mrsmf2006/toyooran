@@ -1,0 +1,6 @@
+{
+  "name": "طیوران صنعت پویا | Toyooran Sanat Pouya",
+  "description": "پلتفرم جامع مهندسی، تجهیزات و راهکارهای هوشمند مرغداری و دام و آبزیان",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
