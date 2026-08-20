@@ -83,7 +83,7 @@ export default function App() {
   const isLandingView = currentSection === 'home';
 
   return (
-    <div className={`bg-[#F8FAFC] text-[#333132] font-['Vazirmatn',sans-serif] ${isLandingView ? 'h-screen overflow-hidden flex flex-col' : 'min-h-screen flex flex-col'}`}>
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#333132] font-['Vazirmatn',sans-serif] scroll-smooth">
       
       {/* Top Navbar */}
       <Navbar
@@ -97,9 +97,9 @@ export default function App() {
       />
 
       {/* Main Content Area based on Section */}
-      <main className={`flex-1 ${isLandingView ? 'overflow-hidden flex flex-col' : 'overflow-y-auto'}`}>
+      <main className="flex-1 w-full overflow-y-auto">
         
-        {/* Exact Landing Page from Reference UI/UX Mockup (Strict 0-scroll on desktop) */}
+        {/* Home Page: 100vh Top Hero + Circular Category Cards */}
         {currentSection === 'home' && (
           <Hero
             onNavigate={handleNavigate}
@@ -230,27 +230,6 @@ export default function App() {
           </div>
         )}
       </main>
-
-      {/* Floating Smart AI Assistant Trigger Button (Bottom-Left) */}
-      <div className="fixed bottom-5 left-5 z-40 flex items-center gap-2">
-        <button
-          onClick={() => setIsAiAssistantOpen(true)}
-          id="floating-ai-assistant-btn"
-          className="group relative bg-[#003F86] hover:bg-blue-900 text-white p-3.5 sm:px-4 sm:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 border border-blue-700"
-          title="دستیار هوشمند محاسبات مهندسی طیوران"
-        >
-          <div className="w-8 h-8 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-inner">
-            <Bot className="w-5 h-5" />
-          </div>
-          <div className="hidden sm:flex flex-col text-right">
-            <span className="text-xs font-bold text-white flex items-center gap-1">
-              مهندس هوشمند طیوران
-              <Sparkles className="w-3 h-3 text-amber-400" />
-            </span>
-            <span className="text-[10px] text-blue-200">محاسبه آنلاین CFM و FCR</span>
-          </div>
-        </button>
-      </div>
 
       {/* Interactive Modals */}
       <CaseStudyModal
